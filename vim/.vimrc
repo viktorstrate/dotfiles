@@ -1,16 +1,26 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'valloric/youcompleteme'
+
+call vundle#end()
+
 syntax on
 set number
 
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
-set ruler
+set ruler           " Always show the current position
 
 " Searching
 set ignorecase
 set smartcase
-" Highlight search
-set hlsearch
+set incsearch       " search as characters are entered
+"set hlsearch       " Highlight search
 
 " No annoying sound on errors
 set noerrorbells
@@ -18,11 +28,15 @@ set novisualbell
 set t_vb=
 set tm=500
 
+set wildmenu        " visual autocomplete for command menu
+set showmatch       " highlight matching [{()}]
+
 set encoding=utf8
 
 " Set unix as the standard file type
 set ffs=unix,dos,mac
 
+" Don't generate files
 set nobackup
 set nowb
 set noswapfile
