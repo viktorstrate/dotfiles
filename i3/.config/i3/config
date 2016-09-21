@@ -9,7 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -128,6 +129,10 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# move to relative workspaces
+bindsym $alt+Right workspace next
+bindsym $alt+Left workspace prev
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -173,6 +178,9 @@ bar {
 	}
 }
 
+gaps inner 6
+gaps outer 0
+
 # Appearance
 client.focused          #466E9E #466E9E #FEFEFF #7EC5FF   #467FC2
 client.focused_inactive #2F343F #2F343F #FEFEFF #484e50   #5f676a
@@ -186,14 +194,17 @@ client.background       #F5F6F7
 exec --no-startup-id xfce4-panel --disable-wm-check
 
 # Start compton
-exec compton
+exec compton --config ~/.config/compton.conf
 
 # Assign programs to workspaces
 assign [class="Spotify"] $ws10
 assign [class="Firefox"] $ws1
 
+# Assign floating programs
+for_window [class="Enpass-Desktop" instance="Enpass"] floating enable
+
 # Startup programs
-exec spotify
+# exec spotify
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+ unmute #increase sound volume
