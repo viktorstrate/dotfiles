@@ -1,0 +1,47 @@
+iconsize = 25
+
+item = File manager
+cmd = thunar
+icon = NULL
+
+SEPARATOR
+
+Submenu = General
+    
+    icon = NULL
+
+    item = Firefox
+    cmd = firefox
+    icon = NULL
+
+    item = Spotify
+    cmd = spotify
+    icon = NULL
+
+Submenu = Internet
+    
+    icon = NULL
+
+    item = Skype
+    cmd = skype
+    icon = NULL
+
+    item = Teamspeak 3
+    cmd = teamspeak3
+    icon = NULL
+
+    item = Hexchat
+    cmd = hexchat
+    icon = NULL
+
+Submenu = Graphics
+
+    icon = NULL
+
+    item = Gimp
+    cmd = gimp
+    icon = NULL
+
+    item = Inkscape
+    cmd = inkscape
+    icon = NULL
