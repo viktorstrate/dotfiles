@@ -45,3 +45,31 @@ Submenu = Graphics
     item = Inkscape
     cmd = inkscape
     icon = NULL
+
+Submenu = Office
+
+    icon = NULL
+
+    item = Writer
+    cmd = libreoffice --writer
+    icon = NULL
+
+    item = Calc
+    cmd = libreoffice --calc
+    icon = NULL
+
+    item = Draw
+    cmd = libreoffice --draw
+    icon = NULL
+
+    item = Impress
+    cmd = libreoffice --impress
+    icon = NULL
+
+    item = Base
+    cmd = libreoffice --base
+    icon = NULL
+
+    item = Math
+    cmd = libreoffice --math
+    icon = NULL

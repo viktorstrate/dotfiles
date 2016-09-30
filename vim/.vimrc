@@ -11,6 +11,7 @@ call vundle#end()
 
 syntax on
 set number
+" colorscheme gruvbox
 
 filetype plugin indent on
 

@@ -229,4 +229,4 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 # Set wallpaper
-exec feh --bg-scale /home/viktorstrate/Pictures/wallpaper.jpg
+exec feh --bg-scale /home/viktorstrate/Pictures/wallpaper.png
