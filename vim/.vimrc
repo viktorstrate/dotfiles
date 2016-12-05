@@ -6,6 +6,8 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'mattn/emmet-vim'
+
 call vundle#end()
 
 syntax on
