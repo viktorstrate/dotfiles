@@ -1,9 +1,12 @@
 [user]
 	email = viktorstrate@gmail.com
 	name = viktorstrate
+	signingkey = 3F855605109C1E8A
 [core]
 	autocrlf = input
 	editor = vim
+[commit]
+	gpgsign = true
 [web]
     browser = firefox
 [color]
@@ -33,4 +36,3 @@
     f = fetch
     m = merge
     s = status
-
