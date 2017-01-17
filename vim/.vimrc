@@ -12,6 +12,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'valloric/youcompleteme'
 
 " Syntax highlighting
 Plugin 'pangloss/vim-javascript'
