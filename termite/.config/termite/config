@@ -38,5 +38,5 @@ color14 = #56b6c2
 color7  = #abb2bf
 color15 = #ffffff
 
-[options]
-font = GohuFont 10
+#[options]
+#font = GohuFont 10
