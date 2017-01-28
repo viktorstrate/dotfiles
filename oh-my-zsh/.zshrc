@@ -4,6 +4,12 @@
 # Aliases
 alias speedtest=speedtest-cli
 
+# If neovim is installed
+
+if type "nvim" > /dev/null; then
+    alias vim=nvim
+fi
+
 # NPM global packages
 export PATH=~/.npm-global/bin:$PATH
 

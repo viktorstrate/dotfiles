@@ -36,3 +36,5 @@
     f = fetch
     m = merge
     s = status
+[credential]
+	helper = cache
