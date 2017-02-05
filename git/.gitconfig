@@ -4,7 +4,7 @@
 	signingkey = 3F855605109C1E8A
 [core]
 	autocrlf = input
-	editor = vim
+	editor = nvim
 [commit]
 	gpgsign = true
 [web]
