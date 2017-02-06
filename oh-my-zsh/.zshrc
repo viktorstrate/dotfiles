@@ -10,16 +10,13 @@ if type "nvim" > /dev/null; then
     alias vim=nvim
 fi
 
-# NPM global packages
-export PATH=~/.npm-global/bin:$PATH
-
 # Android
 export ANDROID_HOME=~/Android/Sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/viktorstrate/.oh-my-zsh
+export ZSH=${HOME}/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
