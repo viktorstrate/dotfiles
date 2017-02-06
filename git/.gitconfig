@@ -36,5 +36,6 @@
     f = fetch
     m = merge
     s = status
+    remember = config --global credential.helper cache
 [credential]
 	helper = cache
