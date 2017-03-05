@@ -1,15 +1,20 @@
-" Setup vim-plug
-if has('nvim')
-    call plug#begin('~/.local/share/nvim/plugged')
-else
-    call plug#begin('~/.vim/plugged')
+" Check if plugged is installed and istall if not
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" ### Plugins used on both vanilla vim and neovim
+" Setup vim-plug
+call plug#begin('~/.local/share/nvim/plugged')
+
 Plug 'scrooloose/nerdtree'                " File tree view
+
 " Make sure neovim has python3 support
 " Check with this command :echo has("python3")
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Auto completion
+Plug 'carlitux/deoplete-ternjs'
+
 Plug 'bling/vim-airline'                  " Lean & mean status/tabline
 Plug 'vim-airline/vim-airline-themes'     " Themes for airline
 Plug 'tpope/vim-fugitive'                 " Git
@@ -20,6 +25,7 @@ Plug 'flazz/vim-colorschemes'             " For color schemes
 
 Plug 'benekastah/neomake'                 " Async :make and linting framework
 Plug 'benjie/neomake-local-eslint.vim'    " Prefer local repo install of eslint over global install
+Plug 'marijnh/tern_for_vim'               " Javascript Tern support
 
 " Syntax highlighting
 Plug 'pangloss/vim-javascript'
@@ -39,7 +45,7 @@ let g:user_emmet_leader_key='<leader><leader>'
 
 " Neomake
 autocmd! BufWritePost,BufEnter * Neomake
-let g:neomake_javascript_enabled_makers = ['flow', 'eslint']
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 " Airline
 set laststatus=2
@@ -50,6 +56,10 @@ colorscheme slate
 " ## Neovim plugin configurations
 " Use deoplete, for autocomplete
 call deoplete#enable()
+
+"Add extra filetypes to tern
+let g:tern#filetypes = ['jsx']
+
 " deoplete tab-complete
 "inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr> <TAB>

@@ -4,10 +4,19 @@
 # Aliases
 alias speedtest=speedtest-cli
 
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
 # If neovim is installed
 
 if type "nvim" > /dev/null; then
     alias vim=nvim
+fi
+
+if type "nodejs" > /dev/null; then
+    alias node=nodejs
 fi
 
 # Android
@@ -65,7 +74,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git docker sudo)
 
 source $ZSH/oh-my-zsh.sh
 

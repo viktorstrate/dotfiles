@@ -18,7 +18,7 @@ Plugin 'tpope/vim-fugitive'                 " Git
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/syntastic'               " File linting / error checker
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'valloric/youcompleteme'             " Auto completion
+"Plugin 'valloric/youcompleteme'             " Auto completion
 Plugin 'kien/ctrlp.vim'                     " Path fyzzy file, buffer, mru, tag... finder
 Plugin 'flazz/vim-colorschemes'             " For color schemes
 
