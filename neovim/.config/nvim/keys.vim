@@ -1,9 +1,13 @@
 " Change leader
-let mapleader = "<"
+let mapleader = ","
 
 " Resizing
-nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+"nnoremap <silent> <Leader>j :exe "resize " . (winheight(0) * 3/2)<CR>
+"nnoremap <silent> <Leader>k :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <Leader>j :exe "resize +10"<CR>
+nnoremap <silent> <Leader>k :exe "resize -10"<CR>
+nnoremap <silent> <Leader>h :exe "vertical resize +10"<CR>
+nnoremap <silent> <Leader>l :exe "vertical resize -10"<CR>
 
 " Stop highlight after searching
 nnoremap <silent> <leader>, :noh<cr>

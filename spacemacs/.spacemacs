@@ -31,7 +31,6 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     vimscript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -39,6 +38,7 @@ values."
      ;; ----------------------------------------------------------------
      helm
      auto-completion
+     vimscript
 
      ;; javascript
      javascript
@@ -55,6 +55,9 @@ values."
      ;; spell-checking
      syntax-checking
      ;; version-control
+
+     ;; Random
+     xkcd
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
