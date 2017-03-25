@@ -27,6 +27,8 @@ Plug 'benekastah/neomake'                 " Async :make and linting framework
 Plug 'benjie/neomake-local-eslint.vim'    " Prefer local repo install of eslint over global install
 Plug 'marijnh/tern_for_vim'               " Javascript Tern support
 
+Plug 'sheerun/vim-polyglot'               " A large collection of language packs
+
 " Syntax highlighting
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
