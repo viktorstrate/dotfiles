@@ -39,6 +39,7 @@ values."
      helm
      auto-completion
      vimscript
+     c-c++
 
      ;; javascript
      javascript
@@ -310,7 +311,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
   (global-linum-mode) ; Show line numbers by default
-
+  
   (setq js2-strict-missing-semi-warning nil)
   (setq js2-missing-semi-one-line-override nil)
   
@@ -321,6 +322,14 @@ you should place your code here."
   (setq web-mode-css-indent-offset 2) ; web-mode, css in html file
   (setq web-mode-code-indent-offset 2) ; web-mode, js code in html file
   (setq css-indent-offset 2) ; css-mode
+
+  "C & C++ configuration"
+  (setq-default dotspacemacs-configuration-layers
+                '((c-c++ :variables
+                         c-c++-default-mode-for-headers 'c++-mode)))
+
+  (setq-default dotspacemacs-configuration-layers
+                '((c-c++ :variables c-c++-enable-clang-support t)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

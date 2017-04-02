@@ -19,6 +19,11 @@ if type "nodejs" > /dev/null; then
     alias node=nodejs
 fi
 
+# Source vte.sh if using tilix terminal
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
 # Android
 export ANDROID_HOME=~/Android/Sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
