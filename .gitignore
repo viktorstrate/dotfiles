@@ -1,3 +1,10 @@
+Templates/rapport.aux
+Templates/rapport.log
+Templates/rapport.out
+Templates/rapport.pdf
+Templates/rapport.synctex.gz
+Templates/rapport.toc
+
 vim/.vim/bundle/
 vim/.vim/autoload/
 vim/.vim/.netrwhist

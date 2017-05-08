@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdtree'                " File tree view
 " Check with this command :echo has("python3")
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Auto completion
 Plug 'carlitux/deoplete-ternjs'
+Plug 'zchee/deoplete-clang'
 
 Plug 'bling/vim-airline'                  " Lean & mean status/tabline
 Plug 'vim-airline/vim-airline-themes'     " Themes for airline
@@ -43,7 +44,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 
 " Emmet vim
-let g:user_emmet_leader_key='<leader><leader>'
+"let g:user_emmet_leader_key='<leader><leader>'
+
 
 " Neomake
 autocmd! BufWritePost,BufEnter * Neomake

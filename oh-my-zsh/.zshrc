@@ -3,6 +3,8 @@
 
 # Aliases
 alias speedtest=speedtest-cli
+alias open=xdg-open
+alias copy='xclip -sel clip'
 
 # some more ls aliases
 alias ll='ls -alF'
