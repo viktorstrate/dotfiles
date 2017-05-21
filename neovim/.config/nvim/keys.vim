@@ -10,7 +10,11 @@ nnoremap <silent> <Leader>h :exe "vertical resize +10"<CR>
 nnoremap <silent> <Leader>l :exe "vertical resize -10"<CR>
 
 " Stop highlight after searching
-nnoremap <silent> <leader>, :noh<cr>
+nnoremap <silent> <leader><leader> :noh<cr>
+
+" Terminal emulator mapping
+:nnoremap <silent> <Leader>t :exe "terminal"<CR>
+:tnoremap <Esc> <C-\><C-n>
 
 " Neomake
 nmap <Leader><Space>o :lopen<CR>      " open location window
