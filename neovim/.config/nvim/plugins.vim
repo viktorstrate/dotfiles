@@ -19,6 +19,7 @@ Plug 'zchee/deoplete-clang'
 Plug 'bling/vim-airline'                  " Lean & mean status/tabline
 Plug 'vim-airline/vim-airline-themes'     " Themes for airline
 Plug 'tpope/vim-fugitive'                 " Git
+Plug 'airblade/vim-gitgutter'
 Plug 'mattn/emmet-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'kien/ctrlp.vim'                     " Path fyzzy file, buffer, mru, tag... finder

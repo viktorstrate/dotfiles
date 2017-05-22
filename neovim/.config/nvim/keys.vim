@@ -1,6 +1,9 @@
 " Change leader
 let mapleader = ","
 
+" Add mouse support
+set mouse=a
+
 " Resizing
 "nnoremap <silent> <Leader>j :exe "resize " . (winheight(0) * 3/2)<CR>
 "nnoremap <silent> <Leader>k :exe "resize " . (winheight(0) * 2/3)<CR>
