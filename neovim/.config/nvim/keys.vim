@@ -12,6 +12,17 @@ nnoremap <silent> <Leader>k :exe "resize -10"<CR>
 nnoremap <silent> <Leader>h :exe "vertical resize +10"<CR>
 nnoremap <silent> <Leader>l :exe "vertical resize -10"<CR>
 
+" Tabs
+nnoremap <silent> <Leader>1 1gt
+nnoremap <silent> <Leader>2 2gt
+nnoremap <silent> <Leader>3 3gt
+nnoremap <silent> <Leader>4 4gt
+nnoremap <silent> <Leader>5 5gt
+nnoremap <silent> <Leader>6 6gt
+nnoremap <silent> <Leader>7 7gt
+nnoremap <silent> <Leader>8 8gt
+nnoremap <silent> <Leader>9 :tablast<CR>
+
 " Stop highlight after searching
 nnoremap <silent> <leader><leader> :noh<cr>
 
