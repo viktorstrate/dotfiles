@@ -17,7 +17,7 @@ set relativenumber
 set ignorecase
 set smartcase
 set incsearch       " search as characters are entered
-set gdefault        " Never have to type /g at the end of search / replace again
+"set gdefault        " Never have to type /g at the end of search / replace again
 set hlsearch        " Highlight search
 
 " No annoying sound on errors
@@ -55,8 +55,18 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " Delete trailing white space on save
 func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
+    exe "normal mz"
+    %s/\s\+$//ge
+    exe "normal `z"
 endfunc
-autocmd BufWrite * :call DeleteTrailingWS()
+
+function TrimEndLines()
+    exe "normal mz"
+    :silent! %s#\($\n\s*\)\+\%$##
+    exe "normal Go"
+    exe "normal `z"
+endfunction
+
+autocmd BufWrite * call DeleteTrailingWS()
+autocmd BufWrite *.py,*.js,*.jsx,*.vim call TrimEndLines()
+

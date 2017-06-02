@@ -12,6 +12,9 @@ nnoremap <silent> <Leader>k :exe "resize -10"<CR>
 nnoremap <silent> <Leader>h :exe "vertical resize +10"<CR>
 nnoremap <silent> <Leader>l :exe "vertical resize -10"<CR>
 
+" Navigation
+nnoremap <Leader>f <C-]>
+
 " Tabs
 nnoremap <silent> <Leader>1 1gt
 nnoremap <silent> <Leader>2 2gt
@@ -28,6 +31,7 @@ nnoremap <silent> <leader><leader> :noh<cr>
 
 " Terminal emulator mapping
 :nnoremap <silent> <Leader>t :exe "terminal"<CR>
+:tmap <C-w> <Esc><C-w>
 :tnoremap <Esc> <C-\><C-n>
 
 " Neomake
@@ -36,3 +40,4 @@ nmap <Leader><Space>c :lclose<CR>     " close location window
 nmap <Leader><Space>, :ll<CR>         " go to current error/warning
 nmap <Leader><Space>n :lnext<CR>      " next error/warning
 nmap <Leader><Space>p :lprev<CR>      " previous error/warning
+

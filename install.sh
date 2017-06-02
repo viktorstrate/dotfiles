@@ -44,3 +44,4 @@ read -p "Install dependencies and plugins for Oh-My-Zsh? [Y/n]" result
 if [[ $result =~ ^[Yy]$ ]] || [ -z $result ]; then
     install_zsh;
 fi
+

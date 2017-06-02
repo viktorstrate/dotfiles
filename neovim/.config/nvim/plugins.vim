@@ -42,7 +42,8 @@ call plug#end()
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-map <C-n> :NERDTreeToggle<CR>
+noremap <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " Emmet vim
 "let g:user_emmet_leader_key='<leader><leader>'
@@ -75,3 +76,4 @@ inoremap <silent><expr> <TAB>
 		let col = col('.') - 1
 		return !col || getline('.')[col - 1]  =~ '\s'
 		endfunction"}}}
+
