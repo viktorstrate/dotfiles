@@ -1,4 +1,12 @@
 # My dotfiles
 
 Use _stow_ to make symlinks
-> stow [folder]
+```shell
+    stow [folder]
+```
+
+Select and install dependencies
+```shell
+    chmod +x install.sh && ./install.sh
+```
+

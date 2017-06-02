@@ -46,8 +46,10 @@ noremap <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 " Emmet vim
-"let g:user_emmet_leader_key='<leader><leader>'
+imap <expr> ½ emmet#expandAbbrIntelligent("\<tab>")
 
+" Ctrl-P
+let g:ctrlp_working_path_mode = 'a'
 
 " Neomake
 autocmd! BufWritePost,BufEnter * Neomake
