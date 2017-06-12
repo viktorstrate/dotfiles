@@ -1,9 +1,6 @@
 " Change leader
 let mapleader = ","
 
-" Add mouse support
-set mouse=a
-
 " Resizing
 "nnoremap <silent> <Leader>j :exe "resize " . (winheight(0) * 3/2)<CR>
 "nnoremap <silent> <Leader>k :exe "resize " . (winheight(0) * 2/3)<CR>
@@ -14,6 +11,12 @@ nnoremap <silent> <Leader>l :exe "vertical resize -10"<CR>
 
 " Navigation
 nnoremap <Leader>f <C-]>
+
+nnoremap <M-Down> <C-e>
+nnoremap <M-Up> <C-y>
+
+nnoremap <C-Down> 5<C-e>
+nnoremap <C-Up> 5<C-y>
 
 " Tabs
 nnoremap <silent> <Leader>1 1gt

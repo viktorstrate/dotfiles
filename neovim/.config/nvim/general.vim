@@ -1,14 +1,10 @@
-syntax on
 set number
-" colorscheme gruvbox
-set t_Co=256        " Enable 256 colors
 
-filetype plugin indent on
+" Add mouse support
+set mouse=a
 
-set ruler           " Always show the current position
 set cursorline      " Highlight current line
 
-set autowrite       " Automatically :write before running commands
 set autoread        " Reload files changed outside vim
 
 set relativenumber
@@ -26,7 +22,6 @@ set novisualbell
 set t_vb=
 set tm=500
 
-set wildmenu        " visual autocomplete for command menu
 "set showmatch       " highlight matching [{()}]
 
 set encoding=utf8
@@ -41,30 +36,28 @@ set noswapfile
 
 " Use spaces instead of tabs
 set expandtab
-set smarttab
 
 set shiftwidth=4
 set tabstop=4
 
 set ai      " Auto indent
 set si      " Smart indent
-set wrap    "Wrap lines
+set wrap    " Wrap lines
 
-" Remove escape delay
-set timeoutlen=1000 ttimeoutlen=0
+set list    " Visible whitespaces
 
-" Delete trailing white space on save
 func! DeleteTrailingWS()
     exe "normal mz"
     %s/\s\+$//ge
     exe "normal `z"
 endfunc
 
-function TrimEndLines()
+func! TrimEndLines()
     exe "normal mz"
     :silent! %s#\($\n\s*\)\+\%$##
     exe "normal Go"
-    exe "normal `z"
+    " Move back to mark z and move view to center of screen
+    exe "normal `zzz"
 endfunction
 
 autocmd BufWrite * call DeleteTrailingWS()

@@ -17,6 +17,10 @@ if type "nvim" > /dev/null; then
     alias vim=nvim
 fi
 
+if type "hub" > /dev/null; then
+    alias git=hub
+fi
+
 if type "nodejs" > /dev/null; then
     alias node=nodejs
 fi
