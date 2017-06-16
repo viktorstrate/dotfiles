@@ -25,9 +25,15 @@ if type "nodejs" > /dev/null; then
     alias node=nodejs
 fi
 
+### Tilix specefics
 # Source vte.sh if using tilix terminal
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
+    source /etc/profile.d/vte.sh
+fi
+
+# To make neovim render properly
+if [ $TILIX_ID ]; then
+    export TERM=""
 fi
 
 # Android
