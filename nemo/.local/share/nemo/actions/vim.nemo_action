@@ -1,0 +1,10 @@
+[Nemo Action]
+Active=true
+Name=Open with NeoVim
+Comment=Open current directory in Vim from the terminal
+
+Exec=tilix -e "env RUN='cd %P && env TERM="" nvim %F' zsh"
+Icon-Name=nvim
+Selection=any
+Extensions=any
+Dependencies=nvim

@@ -14,7 +14,10 @@ alias l='ls -CF'
 # If neovim is installed
 
 if type "nvim" > /dev/null; then
-    alias vim=nvim
+    alias vim='env TERM="" nvim'
+    alias v='env TERM="" nvim'
+else
+    alias v=vim
 fi
 
 if type "hub" > /dev/null; then
@@ -28,12 +31,12 @@ fi
 ### Tilix specefics
 # Source vte.sh if using tilix terminal
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
+    # source /etc/profile.d/vte.sh
 fi
 
 # To make neovim render properly
 if [ $TILIX_ID ]; then
-    export TERM=""
+    # export TERM=""
 fi
 
 # Android
@@ -127,3 +130,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# To be able to start zsh with a given command,
+# and enter interactive mode when process is closed
+eval "$RUN"
