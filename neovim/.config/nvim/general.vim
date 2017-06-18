@@ -2,7 +2,10 @@
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
+set termguicolors
+
 "exec 'Guifont DejaVuSansMono Nerd Font:h11'
+
 
 " Folding {{{1
 set foldmethod=marker
@@ -16,7 +19,7 @@ set mouse=a
 set number
 set cursorline      " Highlight current line
 set autoread        " Reload files changed outside vim
-"set relativenumber
+set relativenumber
 set number
 "set showmatch       " highlight matching [{()}]
 set encoding=utf8
@@ -24,6 +27,7 @@ set encoding=utf8
 set ffs=unix,dos,mac
 "set list    " Visible whitespaces
 set hidden
+set undofile
 
 " Searching {{{1
 set ignorecase
@@ -34,14 +38,10 @@ set hlsearch        " Highlight search
 
 " No annoying sound on errors {{{1
 set noerrorbells
-set novisualbell
+set visualbell
 set t_vb=
 set tm=500
 
-" Don't generate files {{{1
-set nobackup
-set nowb
-set noswapfile
 
 " Use spaces instead of tabs {{{1
 set expandtab
@@ -57,15 +57,14 @@ set softtabstop=4
 set ai      " Auto indent
 set si      " Smart indent
 set wrap    " Wrap lines
+set showbreak=>
 
 " Filetype specefic {{{1
 autocmd FileType javascript setlocal tabstop=2 softtabstop=2
 
 " Functions {{{1
 func! DeleteTrailingWS()
-    exe "normal mz"
-    %s/\s\+$//ge
-     " Preparation: save last search, and cursor position.
+    " Preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
     let c = col(".")

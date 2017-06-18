@@ -1,7 +1,8 @@
-" Change leader {{{1
+" Change leader	------------------------------{{{1
 let mapleader = ","
+let maplocalleader = "å"
 
-" Resizing {{{1
+" Resizing	------------------------------{{{1
 "nnoremap <silent> <Leader>j :exe "resize " . (winheight(0) * 3/2)<CR>
 "nnoremap <silent> <Leader>k :exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <Leader>j :exe "resize +10"<CR>
@@ -9,60 +10,79 @@ nnoremap <silent> <Leader>k :exe "resize -10"<CR>
 nnoremap <silent> <Leader>h :exe "vertical resize +10"<CR>
 nnoremap <silent> <Leader>l :exe "vertical resize -10"<CR>
 
-" Navigation {{{1
+" Navigation	------------------------------{{{1
 noremap j gj
 noremap k gk
 
-nnoremap H ^
-vnoremap H ^
-nnoremap L g_
-vnoremap L g_
-nnoremap J 5j
-nnoremap K 5k
+nmap H ^
+vmap H ^
 
-autocmd FileType Help nnoremap <buffer> <CR> <C-]>
+nmap L g_
+vmap L g_
+
+nmap J 5j
+vmap J 5j
+
+nmap K 5k
+vmap K 5k
+
+autocmd FileType help nnoremap <buffer> <CR> <C-]>
 
 nnoremap <M-Down> <C-e>
 nnoremap <M-Up> <C-y>
 
-nnoremap <C-Down> 5<C-e>
-nnoremap <C-Up> 5<C-y>
+" nnoremap <Down> 5<C-e>
+" nnoremap <Up> 5<C-y>
 nnoremap <M-j> 5<C-e>
 nnoremap <M-k> 5<C-y>
 
-" Editing {{{1
-cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+" Bubble single lines
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+" Bubble multiple lines
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
+
+nmap æ [
+nmap ø ]
+omap æ [
+omap ø ]
+xmap æ [
+xmap ø ]
+
+" Buffers {{{1
+noremap <silent> <leader>bd :bd<CR>
+noremap <silent> <leader>bn :bn<CR>
+noremap <silent> <leader>bp :bp<CR>
+
+" Editing	------------------------------{{{1
+cnoremap %% <C-R>=fnameescape(expand('%:p:h')).'/'<cr>
 map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
 
-" Insert mode {{{1
+" Insert mode	------------------------------{{{1
 " Delete line
 inoremap <C-d> <esc>ddi
 
-" Copy/paste to clipboard {{{1
+inoremap jj <esc>
+
+" Clipboard	------------------------------{{{1
 vnoremap <C-c> "+y
 nnoremap <C-c> "+y<CR>
 
-" Indentation {{{1
-vmap <S-Tab> <gv
-vmap <Tab> >gv
+" Indentation	------------------------------{{{1
+vmap < <gv
+vmap > >gv
 nmap < <<
 nmap > >>
 
-" Stop highlight after searching {{{1
+" Stop highlight after search	------------------------------{{{1
 nnoremap <silent> <leader><leader> :noh<cr>
 
-" Terminal emulator mapping {{{1
-:nnoremap <silent> <Leader>t :exe "terminal"<CR>
+" Terminal emulator mappings	------------------------------{{{1
+:nnoremap <silent> <M-t> :exe "terminal"<CR>
 :tmap <C-w> <Esc><C-w>
 :tnoremap <Esc> <C-\><C-n>
-
-" Neomake {{{1
-nmap <Leader><Space>o :lopen<CR>      " open location window
-nmap <Leader><Space>c :lclose<CR>     " close location window
-nmap <Leader><Space>, :ll<CR>         " go to current error/warning
-nmap <Leader><Space>n :lnext<CR>      " next error/warning
-nmap <Leader><Space>p :lprev<CR>      " previous error/warning
 
