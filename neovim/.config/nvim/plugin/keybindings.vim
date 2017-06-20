@@ -1,14 +1,12 @@
 " Change leader	------------------------------{{{1
 let mapleader = ","
 let maplocalleader = ",,"
-
 " Resizing	------------------------------{{{1
 " Jump between windows is mapped to <C-j/k/h/l>
 nnoremap <silent> <C-w>j :exe "resize +10"<CR>
 nnoremap <silent> <C-w>k :exe "resize -10"<CR>
 nnoremap <silent> <C-w>h :exe "vertical resize +10"<CR>
 nnoremap <silent> <C-w>l :exe "vertical resize -10"<CR>
-
 " Navigation	------------------------------{{{1
 noremap j gj
 noremap k gk
