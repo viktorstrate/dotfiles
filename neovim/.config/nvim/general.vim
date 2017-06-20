@@ -1,7 +1,3 @@
-" Neovim specefic
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
 set termguicolors
 
 "exec 'Guifont DejaVuSansMono Nerd Font:h11'
@@ -10,7 +6,7 @@ set termguicolors
 " Folding {{{1
 set foldmethod=marker
 set foldcolumn=1
-noremap <Space> za
+noremap <tab> za
 
 
 " General sets {{{1
@@ -21,6 +17,10 @@ set cursorline      " Highlight current line
 set autoread        " Reload files changed outside vim
 set relativenumber
 set number
+
+" A function in colors.vim handles this more enlegantly
+" set colorcolumn=81
+
 "set showmatch       " highlight matching [{()}]
 set encoding=utf8
 " Set unix as the standard file type
@@ -29,6 +29,9 @@ set ffs=unix,dos,mac
 set hidden
 set undofile
 
+" For swap files
+set directory+=/tmp
+
 " Searching {{{1
 set ignorecase
 set smartcase
@@ -36,12 +39,8 @@ set incsearch       " search as characters are entered
 "set gdefault        " Never have to type /g at the end of search / replace again
 set hlsearch        " Highlight search
 
-" No annoying sound on errors {{{1
-set noerrorbells
-set visualbell
-set t_vb=
-set tm=500
-
+" Interactive substitute
+set icm=split
 
 " Use spaces instead of tabs {{{1
 set expandtab
@@ -59,8 +58,7 @@ set si      " Smart indent
 set wrap    " Wrap lines
 set showbreak=>
 
-" Filetype specefic {{{1
-autocmd FileType javascript setlocal tabstop=2 softtabstop=2
+" Javascript {{{2
 
 " Functions {{{1
 func! DeleteTrailingWS()

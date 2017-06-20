@@ -1,0 +1,72 @@
+
+snippet texStart "A template for a new latex document"
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[${1:english, danish}]{babel}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage[hidelinks]{hyperref}
+
+% Layout
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[rightcaption]{sidecap}
+\usepackage{array}
+\usepackage{float}
+\setlength{\parindent}{0.5em}
+\setlength{\parskip}{0.8em}
+
+% Math
+\usepackage{amsmath}
+\usepackage{amsfonts}\usepackage{amssymb}
+
+% Font
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\graphicspath{ {images/} }
+
+% Bibliography
+%\usepackage[backend=biber]{biblatex}
+%\addbibresource{bibliography.bib}
+
+\begin{document}
+
+	\begin{titlepage}
+	\begin{center}
+	\vspace*{1.5cm}
+
+	% Title
+	\begin{huge}
+	\sffamily ${2:Title}
+	\end{huge}
+
+	\vspace{2mm}
+
+	% Subtitle
+	\begin{Large}
+		${3:Subtitle}
+	\end{Large}
+
+	\vspace{8mm}
+
+	% Authors
+	\textit{${4:Authors}}
+
+	\vfill
+
+	%\includegraphics[width=0.5\textwidth]{front}
+
+	\vfill
+
+	\end{center}
+	\end{titlepage}
+
+	\tableofcontents
+
+	\pagebreak
+
+	\section{${5:Introduction}}
+	${0:Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae finibus velit. Phasellus non lorem est. Fusce tincidunt purus lobortis fermentum hendrerit. Proin sit amet porta dolor, id mollis mi. Proin sit amet efficitur erat, ac scelerisque enim. Praesent molestie diam ut ex facilisis tincidunt. Duis ac lacus turpis. Duis quis tempor dui, ac cursus lacus. Aenean nec laoreet massa. Morbi vitae feugiat justo, sed malesuada urna.}
+
+\end{document}
+endsnippet

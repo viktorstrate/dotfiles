@@ -5,6 +5,7 @@
 alias speedtest=speedtest-cli
 alias open=xdg-open
 alias copy='xclip -sel clip'
+alias e=exit
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -12,10 +13,9 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # If neovim is installed
-
 if type "nvim" > /dev/null; then
-    alias vim='env TERM="" nvim'
-    alias v='env TERM="" nvim'
+    alias vim='nvim'
+    alias v='nvim'
 else
     alias v=vim
 fi
@@ -36,7 +36,7 @@ fi
 
 # To make neovim render properly
 if [ $TILIX_ID ]; then
-    # export TERM=""
+    TERM=""
 fi
 
 # Android
