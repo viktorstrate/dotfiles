@@ -7,6 +7,10 @@ alias open=xdg-open
 alias copy='xclip -sel clip'
 alias e=exit
 
+if type "ack" > /dev/null; then
+    alias gack='git ls-files -oc --exclude-standard | ack -x'
+fi
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -31,13 +35,13 @@ fi
 ### Tilix specefics
 # Source vte.sh if using tilix terminal
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    # source /etc/profile.d/vte.sh
+    source /etc/profile.d/vte.sh
 fi
 
-# To make neovim render properly
-if [ $TILIX_ID ]; then
-    TERM=""
-fi
+# # To make neovim render properly
+# if [ $TILIX_ID ]; then
+#     TERM=""
+# fi
 
 # Android
 export ANDROID_HOME=~/Android/Sdk
@@ -46,6 +50,9 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 # Path to your oh-my-zsh installation.
 export ZSH=${HOME}/.oh-my-zsh
+
+# PHP Composer path
+export PATH=${PATH}:/home/viktorstrate/.config/composer/vendor/bin
 
 # Export paths
 export GOPATH="$HOME/.go"
@@ -134,3 +141,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # To be able to start zsh with a given command,
 # and enter interactive mode when process is closed
 eval "$RUN"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

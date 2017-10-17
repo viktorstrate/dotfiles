@@ -24,8 +24,8 @@ endfunc
 
 " Apply custom highlights when changing colorscheme
 autocmd ColorScheme * call UpdateColorScheme()
-autocmd BufRead * call UpdateColorScheme()
-" Update colorschemes on launch
+" autocmd BufRead * call UpdateColorScheme()
+Update colorschemes on launch
 call UpdateColorScheme()
 
 " Terminal color	------------------------------{{{1

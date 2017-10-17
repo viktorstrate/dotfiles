@@ -32,15 +32,20 @@ if exists('$SUDO_USER')
     set noswapfile
     set noundofile
 else
+    set backup
+    set writebackup
+
     " Swap
-    set directory=/.local/share/nvim/swap//
-    set directory+=/tmp/.nvim/swap//
+    " set directory=/.local/share/nvim/swap//
+    " set directory+=/tmp/.nvim/swap//
     set swapfile
 
-    set undodir=/.local/share/nvim/undo
-    set undodir+=/tmp/.nvim/undo
+    " set undodir=/.local/share/nvim/undo
+    " set undodir+=/tmp/.nvim/undo
     set undofile
 endif
+
+set fillchars=vert:┃
 
 set wildignore+=*.o,*.obj
 

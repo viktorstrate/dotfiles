@@ -1,0 +1,9 @@
+[Nemo Action]
+Active=true
+Name=Run in Terminal
+Comment=Run file from the terminal
+
+Exec=tilix -e "env RUN='%F' zsh"
+Selection=single
+Extensions=nodirs
+Dependencies=tilix
