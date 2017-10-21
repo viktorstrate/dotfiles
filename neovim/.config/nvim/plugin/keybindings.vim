@@ -33,8 +33,13 @@ nnoremap <Down> 5<C-e>
 nnoremap <Up> 5<C-y>
 
 " To scroll
-nnoremap <M-j> 5<C-e>
-nnoremap <M-k> 5<C-y>
+if (has('macunix'))
+    nnoremap ‹ 5<C-e>
+    nnoremap ∆ 5<C-y>
+else
+    nnoremap <M-j> 5<C-e>
+    nnoremap <M-k> 5<C-y>
+endif
 
 " For danish keyboard layout, that doesn't have [ ]
 nmap æ [
@@ -86,7 +91,12 @@ nmap > >>
 nnoremap <silent> <ESC> :noh<cr>
 
 " Terminal emulator mappings	------------------------------{{{1
-:nnoremap <silent> <M-t> :exe "terminal"<CR>
+if (has('macunix'))
+    :nnoremap <silent> † :exe "terminal"<CR>
+else
+    :nnoremap <silent> <M-t> :exe "terminal"<CR>
+endif
+
 :tmap <C-w> <Esc><C-w>
 :tnoremap <Esc> <C-\><C-n>
 

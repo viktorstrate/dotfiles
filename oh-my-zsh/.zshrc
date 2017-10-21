@@ -10,9 +10,11 @@ if type "ack" > /dev/null; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -lFh'
 alias la='ls -A'
-alias l='ls -CF'
+
+# Enter directory and list directory
+alias cd='cd $1 && ls'
 
 # If neovim is installed
 if type "nvim" > /dev/null; then

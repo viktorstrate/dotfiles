@@ -47,10 +47,13 @@ Plug 'wincent/command-t', {
 \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
 \ }
 
+" Ale {{{1
+Plug 'w0rp/ale'
+
 " Neomake {{{1
-Plug 'benekastah/neomake'                 " Async :make and linting framework
+" Plug 'benekastah/neomake'                 " Async :make and linting framework
 "Plug 'benjie/neomake-local-eslint.vim'    " Prefer local repo install of eslint over global install
-Plug 'jaawerth/neomake-local-eslint-first'
+" Plug 'jaawerth/neomake-local-eslint-first'
 
 " Javascript {{{1
 Plug 'pangloss/vim-javascript'

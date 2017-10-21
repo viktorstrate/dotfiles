@@ -4,6 +4,8 @@ let g:CommandTWildIgnore=&wildignore .
     \ ",*/.git/*,*/node_modules/*"
 
 nmap <C-t> <plug>(CommandT)
+nmap <leader>tt <plug>(CommandT)
+
 nmap <leader>tc <Plug>(CommandTCommand)
 nmap <leader>th <Plug>(CommandTHelp)
 nmap <leader>tl <Plug>(CommandTLine)
