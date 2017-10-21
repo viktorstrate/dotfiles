@@ -8,3 +8,5 @@ Templates/rapport.toc
 vim/.vim/bundle/
 vim/.vim/autoload/
 vim/.vim/.netrwhist
+
+.DS_Store

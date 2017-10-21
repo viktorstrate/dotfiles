@@ -6,9 +6,7 @@
 	autocrlf = input
 	editor = nvim
 [commit]
-	gpgsign = true
-[web]
-    browser = firefox
+	gpgsign = false
 [color]
     ui = auto
 [color "branch"]

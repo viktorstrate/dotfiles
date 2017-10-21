@@ -2,10 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Aliases
-alias speedtest=speedtest-cli
-alias open=xdg-open
-alias copy='xclip -sel clip'
-alias e=exit
+alias e='exit'
+alias speedtest='speedtest-cli'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -14,10 +12,12 @@ alias l='ls -CF'
 
 # If neovim is installed
 if type "nvim" > /dev/null; then
+    export EDITOR='nvim'
     alias vim='nvim'
     alias v='nvim'
 else
-    alias v=vim
+    export EDITOR='vim'
+    alias v='vim'
 fi
 
 if type "hub" > /dev/null; then
@@ -28,15 +28,23 @@ if type "nodejs" > /dev/null; then
     alias node=nodejs
 fi
 
+# Linux specific aliases
+if [[ `uname` == 'Linux' ]]; then
+    alias open=xdg-open
+    alias copy='xclip -sel clip'
+    alias e=exit
+fi
+
+# macOS specific aliases
+if [[ `uname` == 'Darwin' ]]; then
+    alias copy=pbcopy
+    alias paste=pbpaste
+fi
+
 ### Tilix specefics
 # Source vte.sh if using tilix terminal
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    # source /etc/profile.d/vte.sh
-fi
-
-# To make neovim render properly
-if [ $TILIX_ID ]; then
-    TERM=""
+    source /etc/profile.d/vte.sh
 fi
 
 # Android
@@ -134,3 +142,12 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # To be able to start zsh with a given command,
 # and enter interactive mode when process is closed
 eval "$RUN"
+
+# NVM - Node Verion Manager
+export NVM_DIR="$HOME/.nvm"
+alias loadnvm="source $(brew --prefix nvm)/nvm.sh"
+
+# This isn't loaded here, because it adds 3-6 sec to startup time
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
