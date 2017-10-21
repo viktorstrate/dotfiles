@@ -5,6 +5,10 @@
 alias e='exit'
 alias speedtest='speedtest-cli'
 
+if type "ack" > /dev/null; then
+    alias gack='git ls-files -oc --exclude-standard | ack -x'
+fi
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -54,6 +58,9 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 # Path to your oh-my-zsh installation.
 export ZSH=${HOME}/.oh-my-zsh
+
+# PHP Composer path
+export PATH=${PATH}:/home/viktorstrate/.config/composer/vendor/bin
 
 # Export paths
 export GOPATH="$HOME/.go"
@@ -145,7 +152,9 @@ eval "$RUN"
 
 # NVM - Node Verion Manager
 export NVM_DIR="$HOME/.nvm"
-alias loadnvm="source $(brew --prefix nvm)/nvm.sh"
+if [[ `uname` == 'Darwin' ]]; then
+    alias loadnvm="source $(brew --prefix nvm)/nvm.sh"
+fi
 
 # This isn't loaded here, because it adds 3-6 sec to startup time
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

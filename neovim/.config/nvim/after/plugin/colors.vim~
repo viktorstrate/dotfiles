@@ -7,7 +7,12 @@ func! UpdateColorScheme()
     hi MyTerminal guifg=#A1B0B8 guibg=#1F292E
 
     " A demonstration of what the line below this line does, when the text extends above the allowed length.
-    call matchadd('ColorColumn', '\%>81v.\+', 100)
+
+    " Only highlight text extending 80 columns
+    " call matchadd('ColorColumn', '\%>81v.\+', 100)
+
+    " Highlight everything extengind 80 columns
+    let &l:colorcolumn='+' . join(range(0, 254), ',+')
 
     if g:colors_name == 'base16-tomorrow-night'
         hi CursorLineNR guifg=#FFB21C ctermfg=214
@@ -19,7 +24,8 @@ endfunc
 
 " Apply custom highlights when changing colorscheme
 autocmd ColorScheme * call UpdateColorScheme()
-" Update colorschemes on launch
+" autocmd BufRead * call UpdateColorScheme()
+Update colorschemes on launch
 call UpdateColorScheme()
 
 " Terminal color	------------------------------{{{1

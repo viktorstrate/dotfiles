@@ -1,27 +1,29 @@
 [user]
-	email = viktorstrate@gmail.com
-	name = viktorstrate
-	signingkey = 3F855605109C1E8A
+    email = viktorstrate@gmail.com
+    name = viktorstrate
+    signingkey = 3F855605109C1E8A
 [core]
-	autocrlf = input
-	editor = nvim
+    autocrlf = input
+    editor = nvim
 [commit]
-	gpgsign = false
+    ; gpgsign = true
+[web]
+    browser = firefox
 [color]
     ui = auto
 [color "branch"]
-	current = yellow bold
-	local = green bold
-	remote = cyan bold
+    current = yellow bold
+    local = green bold
+    remote = cyan bold
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
 [color "status"]
-	added = green bold
-	changed = yellow bold
+    added = green bold
+    changed = yellow bold
     untracked = red bold
 [alias]
     a = add -A
@@ -36,4 +38,4 @@
     s = status
     remember = config --global credential.helper cache
 [credential]
-	helper = cache
+    helper = cache
