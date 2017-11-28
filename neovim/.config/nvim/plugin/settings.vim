@@ -7,6 +7,8 @@ set autoread        " Reload files changed outside vim
 set relativenumber
 set number
 
+filetype plugin indent on
+
 " A function in colors.vim handles this more enlegantly
 " set colorcolumn=81
 

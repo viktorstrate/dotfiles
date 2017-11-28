@@ -49,6 +49,11 @@ omap ø ]
 xmap æ [
 xmap ø ]
 
+if (has('macunix'))
+    nnoremap ä <M-[>
+    nnoremap ö <M-]>
+endif
+
 " Buffers {{{1
 noremap <silent> <leader>bd :bd<CR>
 noremap <silent> <leader>bn :bn<CR>

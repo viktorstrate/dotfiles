@@ -6,7 +6,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 noremap <C-n> :<C-r>=g:NERDTree.IsOpen() ? 'NERDTreeClose' : 'NERDTreeCWD'<CR><CR>
 
-let NERDTreeShowHidden=1
+" let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
 let g:NERDTreeQuitOnOpen = 1
 

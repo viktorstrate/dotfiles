@@ -36,6 +36,10 @@ let g:tern_map_keys=1
 " Deoplete python support {{{1
 let g:deoplete#sources.python = ['jedi']
 
+" Deoplete rust support {{{1
+" let g:deoplete#omni_patterns.rust = '[(\.)(::)]'
+" let g:deoplete#sources.rust = ['racer']
+
 " Vimtex with deoplete {{{1
 
 " From the documentation *vimtex-complete-deoplete*
@@ -55,12 +59,14 @@ let g:deoplete#omni#input_patterns.tex = '\\(?:'
 
 
 " Deoplete Clang support {{{1
-if has("unix")
-let g:deoplete#sources#clang#libclang_path="/usr/lib/llvm-4.0/lib/libclang.so.1"
-let g:deoplete#sources#clang#clang_header="/usr/lib/llvm-4.0/lib/clang/4.0.0"
-else
-
+if has("macunix")
+    let g:deoplete#sources#clang#libclang_path="/usr/local/Cellar/llvm/5.0.0/lib/libclang.dylib"
+    let g:deoplete#sources#clang#clang_header="/usr/local/Cellar/llvm/5.0.0/lib/clang/5.0.0"
+elseif has("unix")
+    let g:deoplete#sources#clang#libclang_path="/usr/lib/llvm-4.0/lib/libclang.so.1"
+    let g:deoplete#sources#clang#clang_header="/usr/lib/llvm-4.0/lib/clang/4.0.0"
 endif
+
 
 " SuperTab and snippets {{{1
 

@@ -27,6 +27,9 @@ Plug 'zchee/deoplete-clang'               " C/C++ autocomplete
 Plug 'Shougo/neco-vim'                    " Vimscript autocomplete
 Plug 'zchee/deoplete-jedi'                " Python autocomplete
 Plug 'zchee/deoplete-zsh'                 " ZSH autocomplete
+Plug 'eagletmt/neco-ghc'                  " Haskell autocomplete
+" Plug 'racer-rust/vim-racer'
+" let g:racer_cmd = $HOME."/.cargo/bin/racer"
 
 " Snippets {{{3
 Plug 'SirVer/ultisnips'
@@ -63,6 +66,12 @@ Plug 'heavenshell/vim-jsdoc'
 Plug 'moll/vim-node'
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 
+" Haskell {{{1
+Plug 'neovimhaskell/haskell-vim'
+
+" Rust {{{1
+Plug 'rust-lang/rust.vim'
+
 " Markdown {{{1
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'shime/vim-livedown', { 'for': 'markdown' }
@@ -95,6 +104,8 @@ Plug 'gko/vim-coloresque'                 " Highlight colors in CSS
 Plug 'nelstrom/vim-visual-star-search'    " Same as pressing * over a word, but for a selection
 Plug 'ryanoasis/vim-devicons'             " Icons, requires patched font https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts
 Plug 'terryma/vim-multiple-cursors'       " Multiple cursors
+
+" }}}
 
 call plug#end()
 

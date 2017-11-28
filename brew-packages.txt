@@ -1,0 +1,10 @@
+ack
+node
+cmake
+python
+python3
+ruby
+stow
+tmux
+trash
+yarn

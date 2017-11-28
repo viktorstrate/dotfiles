@@ -4,7 +4,7 @@ colorscheme base16-tomorrow-night
 " Custom colors specefic to Tomorrow-Night colorscheme
 func! UpdateColorScheme()
     " Use dark background for terminals
-    hi MyTerminal guifg=#A1B0B8 guibg=#1F292E
+    "hi MyTerminal guifg=#A1B0B8 guibg=#1F292E
 
     " A demonstration of what the line below this line does, when the text extends above the allowed length.
 

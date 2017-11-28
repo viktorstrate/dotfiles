@@ -14,7 +14,7 @@ alias ll='ls -lFh'
 alias la='ls -A'
 
 # Enter directory and list directory
-alias cd='cd $1 && ls'
+#alias cd='cd $1 && ls'
 
 # If neovim is installed
 if type "nvim" > /dev/null; then
@@ -62,11 +62,12 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export ZSH=${HOME}/.oh-my-zsh
 
 # PHP Composer path
-export PATH=${PATH}:/home/viktorstrate/.config/composer/vendor/bin
+export PATH=${PATH}:${HOME}/.config/composer/vendor/bin
 
 # Export paths
 export GOPATH="$HOME/.go"
 export PATH=${PATH}:${GOPATH}/bin
+export PATH="${PATH}:${HOME}/.local/bin"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -150,15 +151,22 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # To be able to start zsh with a given command,
 # and enter interactive mode when process is closed
-eval "$RUN"
+if [ $RUN ]; then
+    eval "$RUN"
+fi
 
 # NVM - Node Verion Manager
-export NVM_DIR="$HOME/.nvm"
-if [[ `uname` == 'Darwin' ]]; then
-    alias loadnvm="source $(brew --prefix nvm)/nvm.sh"
-fi
+# export NVM_DIR="$HOME/.nvm"
+# if [[ `uname` == 'Darwin' ]]; then
+#     alias loadnvm="source $(brew --prefix nvm)/nvm.sh"
+# fi
 
 # This isn't loaded here, because it adds 3-6 sec to startup time
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

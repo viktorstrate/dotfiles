@@ -10,7 +10,20 @@ let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
-if has("gui_running")
+if has("macunix")
+    nmap ¡ <Plug>AirlineSelectTab1
+    nmap “ <Plug>AirlineSelectTab2
+    nmap § <Plug>AirlineSelectTab3
+    nmap £ <Plug>AirlineSelectTab4
+    nmap ∞ <Plug>AirlineSelectTab5
+    nmap ™ <Plug>AirlineSelectTab6
+    nmap ¶ <Plug>AirlineSelectTab7
+    nmap [ <Plug>AirlineSelectTab8
+    nmap ] <Plug>AirlineSelectTab9
+
+    nmap ≠ <Plug>AirlineSelectPrevTab
+    nmap ± <Plug>AirlineSelectNextTab
+elseif has("gui_running")
     nmap <M-1> <Plug>AirlineSelectTab1
     nmap <M-2> <Plug>AirlineSelectTab2
     nmap <M-3> <Plug>AirlineSelectTab3
