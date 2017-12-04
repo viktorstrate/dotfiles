@@ -36,7 +36,6 @@ let g:tern_map_keys=1
 " Deoplete python support {{{1
 let g:deoplete#sources.python = ['jedi']
 
-" Deoplete rust support {{{1
 " let g:deoplete#omni_patterns.rust = '[(\.)(::)]'
 " let g:deoplete#sources.rust = ['racer']
 

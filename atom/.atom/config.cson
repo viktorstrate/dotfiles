@@ -1,0 +1,22 @@
+"*":
+  core:
+    telemetryConsent: "limited"
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
+    ]
+  editor:
+    fontSize: 13
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+  "exception-reporting":
+    userId: "4ff79da8-6fc7-415c-9dbd-0429451c4786"
+  "linter-ui-default":
+    showPanel: true
+  "linter-write-good": {}
+  racer:
+    racerBinPath: "/Users/viktorstrate/.cargo/bin/racer"
+    rustSrcPath: "/Users/viktorstrate/Library/rust/src"
+  welcome:
+    showOnStartup: false

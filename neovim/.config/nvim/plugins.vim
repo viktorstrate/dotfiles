@@ -18,18 +18,35 @@ Plug 'Xuyuanp/nerdtree-git-plugin'        " Plugin for git
 " Autocomplete {{{1
 " Make sure neovim has python3 support
 " Check with this command :echo has("python3")
+
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Auto completion
+" The newest version of deoplete wasn't working, so i am using release 3.0
+let g:plugs['deoplete.nvim'].commit = 'ac4e8b5'
 Plug 'ervandew/supertab'
 Plug 'Shougo/neoinclude.vim'
-Plug 'carlitux/deoplete-ternjs'
-Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+if (executable('node'))
+    Plug 'carlitux/deoplete-ternjs'
+    Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+endif
 Plug 'zchee/deoplete-clang'               " C/C++ autocomplete
 Plug 'Shougo/neco-vim'                    " Vimscript autocomplete
-Plug 'zchee/deoplete-jedi'                " Python autocomplete
-Plug 'zchee/deoplete-zsh'                 " ZSH autocomplete
-Plug 'eagletmt/neco-ghc'                  " Haskell autocomplete
-" Plug 'racer-rust/vim-racer'
-" let g:racer_cmd = $HOME."/.cargo/bin/racer"
+
+" Python autocomplete
+if (executable('python'))
+    Plug 'zchee/deoplete-jedi'
+endif
+
+" ZSH autocomplete
+if (executable('zsh'))
+    Plug 'zchee/deoplete-zsh'
+endif
+
+" Haskell autocomplete
+if (executable('ghc'))
+    Plug 'eagletmt/neco-ghc'
+endif
+
+Plug 'racer-rust/vim-racer'
 
 " Snippets {{{3
 Plug 'SirVer/ultisnips'
@@ -45,7 +62,9 @@ Plug 'tpope/vim-rhubarb'                  " Github plugin for fugitive
 Plug 'airblade/vim-gitgutter'
 
 " Search {{{1
-Plug 'mileszs/ack.vim'
+if (executable('ack'))
+    Plug 'mileszs/ack.vim'
+endif
 Plug 'wincent/command-t', {
 \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
 \ }
@@ -70,18 +89,25 @@ Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'neovimhaskell/haskell-vim'
 
 " Rust {{{1
-Plug 'rust-lang/rust.vim'
+if (executable('rustc'))
+    Plug 'rust-lang/rust.vim'
+endif
+
+if (executable('cargo'))
+    Plug 'timonv/vim-cargo'
+endif
 
 " Markdown {{{1
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'shime/vim-livedown', { 'for': 'markdown' }
 
-"Multiple cursors  {{{1
 let g:multi_cursor_next_key='<M-n>'
 
 " Latex {{{1
-Plug 'lervag/vimtex', { 'for': 'tex' }
-Plug 'donRaphaco/neotex', { 'for': 'tex', 'do': ':UpdateRemotePlugins' }
+if (executable('pdflatex'))
+    Plug 'lervag/vimtex', { 'for': 'tex' }
+    Plug 'donRaphaco/neotex', { 'for': 'tex', 'do': ':UpdateRemotePlugins' }
+endif
 
 " tpope {{{1
 Plug 'tpope/vim-surround'
@@ -103,7 +129,8 @@ Plug 'jiangmiao/auto-pairs'               " Auto match brackets in insert mode
 Plug 'gko/vim-coloresque'                 " Highlight colors in CSS
 Plug 'nelstrom/vim-visual-star-search'    " Same as pressing * over a word, but for a selection
 Plug 'ryanoasis/vim-devicons'             " Icons, requires patched font https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts
-Plug 'terryma/vim-multiple-cursors'       " Multiple cursors
+"Plug 'terryma/vim-multiple-cursors'       " Multiple cursors
+Plug 'qpkorr/vim-bufkill'                 " Close buffers without closing split
 
 " }}}
 

@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Brew
 echo "Installing homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -10,3 +8,8 @@ brew install $(cat ./brew-packages.txt)
 # Rust
 echo "Installing rust"
 curl https://sh.rustup.rs -sSf | sh
+
+# Atom
+echo "Installing atom plugins"
+stow atom
+./atom/.atom/install-packages.sh

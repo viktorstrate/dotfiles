@@ -55,7 +55,11 @@ if (has('macunix'))
 endif
 
 " Buffers {{{1
-noremap <silent> <leader>bd :bd<CR>
+noremap <silent> <leader>d :BD<CR>
+noremap <silent> <leader>s :bn<CR>
+noremap <silent> <leader>a :bp<CR>
+
+noremap <silent> <leader>bd :BD<CR>
 noremap <silent> <leader>bn :bn<CR>
 noremap <silent> <leader>bp :bp<CR>
 noremap <silent> <leader>bf :bf<CR>

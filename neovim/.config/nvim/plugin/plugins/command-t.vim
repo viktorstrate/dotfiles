@@ -1,10 +1,11 @@
 let g:CommandTAlwaysShowDotFiles = 1
+let g:CommandTScanDotDirectories = 1
 
 let g:CommandTWildIgnore=&wildignore .
     \ ",*/.git/*,*/node_modules/*"
 
 nmap <C-t> <plug>(CommandT)
-nmap <leader>tt <plug>(CommandT)
+nmap <leader>f <plug>(CommandT)
 
 nmap <leader>tc <Plug>(CommandTCommand)
 nmap <leader>th <Plug>(CommandTHelp)

@@ -10,3 +10,12 @@ vim/.vim/autoload/
 vim/.vim/.netrwhist
 
 .DS_Store
+
+atom/.atom/*
+!atom/.atom/config.cson
+!atom/.atom/init.coffee
+!atom/.atom/install-packages.sh
+!atom/.atom/keymap.cson
+!atom/.atom/packages.txt
+!atom/.atom/snippets.cson
+!atom/.atom/styles.less
