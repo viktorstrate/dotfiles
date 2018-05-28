@@ -1,5 +1,8 @@
 "*":
   core:
+    disabledPackages: [
+      "vim-mode-plus"
+    ]
     telemetryConsent: "limited"
     themes: [
       "one-light-ui"
@@ -12,11 +15,22 @@
     showIndentGuide: true
   "exception-reporting":
     userId: "4ff79da8-6fc7-415c-9dbd-0429451c4786"
-  "linter-ui-default":
-    showPanel: true
+  "language-babel":
+    taggedTemplateGrammar: [
+      "\"(?<=<style jsx>{)|(?<=<style jsx global>{)\":source.css.styled"
+    ]
+  "linter-ui-default": {}
   "linter-write-good": {}
+  "platformio-ide-terminal":
+    toggles:
+      autoClose: true
   racer:
     racerBinPath: "/Users/viktorstrate/.cargo/bin/racer"
     rustSrcPath: "/Users/viktorstrate/Library/rust/src"
+  "spell-check":
+    locales: [
+      "da-DK"
+    ]
+  teletype: {}
   welcome:
     showOnStartup: false

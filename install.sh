@@ -2,6 +2,9 @@
 
 # This script will install everything needed to use the dotfiles
 
+echo "This script is depricated, and should not be run"
+exit 1
+
 function install_vim {
     echo "Installing (neo)vim dependencies..."
 
@@ -44,4 +47,3 @@ read -p "Install dependencies and plugins for Oh-My-Zsh? [Y/n]" result
 if [[ $result =~ ^[Yy]$ ]] || [ -z $result ]; then
     install_zsh;
 fi
-

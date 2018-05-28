@@ -5,6 +5,7 @@
 [core]
     autocrlf = input
     editor = nvim
+    excludesfile = ~/.global-gitignore
 [commit]
     ; gpgsign = true
 [web]

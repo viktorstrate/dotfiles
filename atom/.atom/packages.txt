@@ -1,5 +1,5 @@
 vim-mode-plus
-terminal-plus
+platformio-ide-terminal
 
 autocomplete-modules
 autocomplete-paths

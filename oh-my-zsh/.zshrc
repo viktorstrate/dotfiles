@@ -53,8 +53,15 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
 
+source ~/.credentials
+
 # Android
-export ANDROID_HOME=~/Android/Sdk
+if [[ `uname` == 'Darwin' ]]; then
+    export ANDROID_HOME="$HOME/Library/Android/sdk"
+else
+    export ANDROID_HOME="$HOME/Android/Sdk"
+fi
+
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
@@ -67,6 +74,7 @@ export PATH=${PATH}:${HOME}/.config/composer/vendor/bin
 # Export paths
 export GOPATH="$HOME/.go"
 export PATH=${PATH}:${GOPATH}/bin
+export PATH="${PATH}:/usr/local/sbin"
 export PATH="${PATH}:${HOME}/.local/bin"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -170,3 +178,8 @@ fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# export PATH=/Users/viktorstrate/.local/bin/luna-studio:$PATH
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

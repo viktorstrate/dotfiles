@@ -1,0 +1,10 @@
+/* Move tab close button to the right */
+.tab .close {
+  order: 0 !important;
+  margin-right: 6px;
+}
+
+/* Show tab favicon when mouse over */
+.favicon {
+  display: flex !important;
+}
