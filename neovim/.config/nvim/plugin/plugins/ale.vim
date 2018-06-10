@@ -2,6 +2,9 @@ let g:ale_fixers = {
             \   'javascript': [
             \       'eslint',
             \   ],
+            \   'cpp': [
+            \       'clang-format',
+            \   ],
             \}
 
 let g:ale_sign_error = '•'

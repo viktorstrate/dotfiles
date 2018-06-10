@@ -53,7 +53,9 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
 
-source ~/.credentials
+if [ -d ~/.credentials ]; then
+    source ~/.credentials
+fi
 
 # Android
 if [[ `uname` == 'Darwin' ]]; then
@@ -177,9 +179,14 @@ fi
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+if [ -d ~/.rvm/ ]; then
+    export PATH="$PATH:$HOME/.rvm/bin"
+elif [ -d ~/.gem/ruby/2.5.0/bin/ ]; then
+    export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin"
+fi
 
 # export PATH=/Users/viktorstrate/.local/bin/luna-studio:$PATH
 
+# For iterm2 shell integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
