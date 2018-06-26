@@ -7,7 +7,7 @@
     editor = nvim
     excludesfile = ~/.global-gitignore
 [commit]
-    ; gpgsign = true
+    gpgsign = true
 [web]
     browser = firefox
 [color]
