@@ -1,5 +1,5 @@
 [Nemo Action]
-Active=true
+Active=false
 Name=Open with Atom
 Comment=Open with Atom
 
