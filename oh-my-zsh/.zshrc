@@ -9,9 +9,12 @@ if type "ack" > /dev/null; then
     alias gack='git ls-files -oc --exclude-standard | ack -x'
 fi
 
-# some more ls aliases
 alias ll='ls -lFh'
 alias la='ls -A'
+
+# Directory specific aliases
+alias dev='cd ~/Development/'
+alias desk='cd ~/Desktop/'
 
 # Enter directory and list directory
 #alias cd='cd $1 && ls'
@@ -66,6 +69,11 @@ fi
 
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+# Flutter
+if [[ `uname` == 'Darwin' ]]; then
+    export PATH=${PATH}:${HOME}/Library/Flutter/bin
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=${HOME}/.oh-my-zsh
