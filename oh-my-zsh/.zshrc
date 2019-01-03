@@ -75,15 +75,25 @@ if [[ `uname` == 'Darwin' ]]; then
     export PATH=${PATH}:${HOME}/Library/Flutter/bin
 fi
 
+# GPG
+if [[ `uname` == 'Darwin' ]]; then
+    export GPG_TTY=$(tty)
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=${HOME}/.oh-my-zsh
 
 # PHP Composer path
 export PATH=${PATH}:${HOME}/.config/composer/vendor/bin
 
-# Export paths
-export GOPATH="$HOME/.go"
+# Go
+export GOPATH="${HOME}/Development/go"
 export PATH=${PATH}:${GOPATH}/bin
+if [[ `uname` == 'Darwin' ]]; then
+	export GOROOT="$(brew --prefix golang)/libexec"
+fi
+
+# Export paths
 export PATH="${PATH}:/usr/local/sbin"
 export PATH="${PATH}:${HOME}/.local/bin"
 
