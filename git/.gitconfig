@@ -38,5 +38,12 @@
     m = merge
     s = status
     remember = config --global credential.helper cache
-[credential]
-    helper = cache
+; [credential]
+	; helper = osxkeychain
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[gpg]
+	program = gpg

@@ -59,8 +59,11 @@ let g:deoplete#omni#input_patterns.tex = '\\(?:'
 
 " Deoplete Clang support {{{1
 if has("macunix")
-    let g:deoplete#sources#clang#libclang_path="/usr/local/Cellar/llvm/5.0.0/lib/libclang.dylib"
-    let g:deoplete#sources#clang#clang_header="/usr/local/Cellar/llvm/5.0.0/lib/clang/5.0.0"
+    let newestVersionPath = split(expand('/usr/local/Cellar/llvm/*'), '\n')[-1]
+    let newestVersion = fnamemodify(newestVersionPath, ':tr')
+
+    let g:deoplete#sources#clang#libclang_path="/usr/local/Cellar/llvm/". newestVersion ."/lib/libclang.dylib"
+    let g:deoplete#sources#clang#clang_header="/usr/local/Cellar/llvm/". newestVersion ."/lib/clang/". newestVersion
 elseif has("unix")
     let g:deoplete#sources#clang#libclang_path="/usr/lib/llvm-4.0/lib/libclang.so.1"
     let g:deoplete#sources#clang#clang_header="/usr/lib/llvm-4.0/lib/clang/4.0.0"

@@ -48,6 +48,7 @@ fi
 if [[ `uname` == 'Darwin' ]]; then
     alias copy=pbcopy
     alias paste=pbpaste
+    export NNN_COPY="$HOME/.nnn_copy.sh"
 fi
 
 ### Tilix specefics
@@ -77,13 +78,25 @@ fi
 export ZSH=${HOME}/.oh-my-zsh
 
 # PHP Composer path
-export PATH=${PATH}:${HOME}/.config/composer/vendor/bin
+if [[ `uname` == 'Darwin' ]]; then
+    export PATH=${PATH}:${HOME}/.composer/vendor/bin
+else
+    export PATH=${PATH}:${HOME}/.config/composer/vendor/bin
+fi
 
 # Export paths
 export GOPATH="$HOME/.go"
 export PATH=${PATH}:${GOPATH}/bin
 export PATH="${PATH}:/usr/local/sbin"
 export PATH="${PATH}:${HOME}/.local/bin"
+
+# GnuPG
+# if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
+#     source ~/.gnupg/.gpg-agent-info
+#     export GPG_AGENT_INFO
+# else
+#     eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+# fi
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
