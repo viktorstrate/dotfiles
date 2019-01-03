@@ -65,8 +65,13 @@ if has("macunix")
     let g:deoplete#sources#clang#libclang_path="/usr/local/Cellar/llvm/". newestVersion ."/lib/libclang.dylib"
     let g:deoplete#sources#clang#clang_header="/usr/local/Cellar/llvm/". newestVersion ."/lib/clang/". newestVersion
 elseif has("unix")
-    let g:deoplete#sources#clang#libclang_path="/usr/lib/llvm-4.0/lib/libclang.so.1"
-    let g:deoplete#sources#clang#clang_header="/usr/lib/llvm-4.0/lib/clang/4.0.0"
+    if filereadable("/usr/lib/libclang.so")
+        let g:deoplete#sources#clang#libclang_path="/usr/lib/libclang.so"
+        let g:deoplete#sources#clang#clang_header="/usr/lib/clang/"
+    else
+        let g:deoplete#sources#clang#libclang_path="/usr/lib/llvm-4.0/lib/libclang.so.1"
+        let g:deoplete#sources#clang#clang_header="/usr/lib/llvm-4.0/lib/clang/4.0.0"
+    endif
 endif
 
 

@@ -1,0 +1,10 @@
+[Nemo Action]
+Active=true
+Name=Open with Code
+Comment=Open with Visual Studio Code 
+
+Exec=code %P
+Icon-Name=vscode
+Selection=any
+Quote=double
+Extensions=dir
