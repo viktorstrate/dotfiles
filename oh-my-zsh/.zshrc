@@ -95,7 +95,7 @@ fi
 export GOPATH="${HOME}/Development/go"
 export PATH=${PATH}:${GOPATH}/bin
 if [[ `uname` == 'Darwin' ]]; then
-	export GOROOT="$(brew --prefix golang)/libexec"
+	export GOROOT="/usr/local/opt/go/libexec"
 fi
 
 # Export paths
@@ -220,4 +220,3 @@ fi
 
 # For iterm2 shell integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
