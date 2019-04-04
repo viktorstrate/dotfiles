@@ -20,6 +20,8 @@ set hidden
 set undofile
 set breakindent
 set scrolloff=3                 " Start scrolling 3 characters before edge
+set shell=bash
+nnoremap Q <Nop>
 
 set list                        " Visible whitespaces
 set listchars+=trail:•
@@ -27,6 +29,10 @@ set listchars+=tab:>-
 
 set switchbuf=useopen
 set virtualedit=block
+
+" Add support for project-based .nvimrc or .exrc initialization files
+set exrc
+set secure
 
 if exists('$SUDO_USER')
     set nobackup

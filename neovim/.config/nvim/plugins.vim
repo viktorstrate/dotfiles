@@ -85,6 +85,19 @@ Plug 'heavenshell/vim-jsdoc'
 Plug 'moll/vim-node'
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 
+" C/C++ {{{1
+Plug 'vim-scripts/a.vim', { 'for': 'cpp' } " For header switching
+" Plug 'vim-scripts/ccimpl.vim'
+" Plug 'derekwyatt/vim-protodef', { 'for': 'cpp' }
+" Plug 'LucHermitte/lh-cpp', { 'for': 'cpp' }
+" Plug 'LucHermitte/lh-vim-lib', { 'for': 'cpp' }
+" Plug 'LucHermitte/lh-brackets', { 'for': 'cpp' }
+" Plug 'LucHermitte/lh-style', { 'for': 'cpp' }
+" Plug 'LucHermitte/lh-dev', { 'for': 'cpp' }
+" Plug 'LucHermitte/mu-template', { 'for': 'cpp' }
+" " Plug 'LucHermitte/VimFold4C', { 'for': 'cpp' }
+" Plug 'LucHermitte/alternate-lite', { 'for': 'cpp' }
+
 " Haskell {{{1
 Plug 'neovimhaskell/haskell-vim'
 

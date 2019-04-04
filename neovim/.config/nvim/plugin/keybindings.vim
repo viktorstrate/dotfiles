@@ -18,10 +18,14 @@ vmap J 5j
 nmap K 5k
 vmap K 5k
 
+" Insert mode navigation bindings
+inoremap <M-Left> <Home>
+inoremap <M-Right> <End>
+
 " Show current file path
 noremap <leader>p :echo expand('%:p')<CR>
 " Show and copy current file path
-noremap <leader>pp :let @+=expand('%:p') \| let @"=expand('%:p') \| echo expand('%:p')<CR>
+" noremap <leader>pp :let @+=expand('%:p') \| let @"=expand('%:p') \| echo expand('%:p')<CR>
 
 " Change to previous buffer
 noremap <leader><leader> <C-^>
@@ -59,11 +63,14 @@ noremap <silent> <leader>d :BD<CR>
 noremap <silent> <leader>s :bn<CR>
 noremap <silent> <leader>a :bp<CR>
 
-noremap <silent> <leader>bd :BD<CR>
+noremap <silent> <leader>bd :bd<CR>
 noremap <silent> <leader>bn :bn<CR>
 noremap <silent> <leader>bp :bp<CR>
 noremap <silent> <leader>bf :bf<CR>
 noremap <silent> <leader>bl :bl<CR>
+" Clear all buffers, except the current
+" https://stackoverflow.com/a/42071865/4171526
+noremap <silent> <leader>bc :%bd<CR>
 
 noremap <leader>q :q<CR>
 
@@ -109,3 +116,5 @@ endif
 :tmap <C-w> <Esc><C-w>
 :tnoremap <Esc> <C-\><C-n>
 
+" Build related keybindings>----------------------------------{{{1
+noremap <C-r> :make!<CR>

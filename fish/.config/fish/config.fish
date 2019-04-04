@@ -39,11 +39,15 @@ end
 if test $os = 'Darwin'
     alias copy=pbcopy
     alias paste=pbpaste
+    alias o 'open .'
     set -x NNN_COPY "$HOME/.nnn_copy.sh"
 end
 
 # Export paths
 set -x PATH $PATH "/usr/local/sbin" "$HOME/.local/bin"
+
+# Rustup
+set PATH $PATH "$HOME/.cargo/bin"
 
 # Android
 if test $os = 'Darwin'
