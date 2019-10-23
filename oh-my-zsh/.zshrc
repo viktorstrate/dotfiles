@@ -48,8 +48,12 @@ fi
 if [[ `uname` == 'Darwin' ]]; then
     alias copy=pbcopy
     alias paste=pbpaste
+    alias o='open .'
     export NNN_COPY="$HOME/.nnn_copy.sh"
 fi
+
+# Auto Jump
+[ -f $(brew --prefix)/etc/profile.d/autojump.sh ] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 ### Tilix specefics
 # Source vte.sh if using tilix terminal
@@ -157,7 +161,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo zsh-autosuggestions)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -189,12 +193,6 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# To be able to start zsh with a given command,
-# and enter interactive mode when process is closed
-if [ $RUN ]; then
-    eval "$RUN"
-fi
 
 # NVM - Node Verion Manager
 # export NVM_DIR="$HOME/.nvm"

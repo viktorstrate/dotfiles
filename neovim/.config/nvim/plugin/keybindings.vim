@@ -1,6 +1,6 @@
 " Change leader	------------------------------{{{1
-let mapleader = ","
-let maplocalleader = "\<Space>"
+let mapleader = "\<Space>"
+let maplocalleader = ","
 
 " Navigation	------------------------------{{{1
 noremap j gj
@@ -72,7 +72,7 @@ noremap <silent> <leader>bl :bl<CR>
 " https://stackoverflow.com/a/42071865/4171526
 noremap <silent> <leader>bc :%bd<CR>
 
-noremap <leader>q :q<CR>
+noremap <leader>q :wq<CR>
 
 
 " Editing	------------------------------{{{1

@@ -7,7 +7,7 @@
     editor = nvim
     excludesfile = ~/.global-gitignore
 [commit]
-    gpgsign = true
+    gpgsign = false
 [web]
     browser = firefox
 [color]
@@ -37,4 +37,5 @@
     f = fetch
     m = merge
     s = status
+    l = log --graph --decorate
     remember = config --global credential.helper cache
