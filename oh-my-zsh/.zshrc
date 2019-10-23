@@ -210,8 +210,16 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 if [ -d ~/.rvm/ ]; then
     export PATH="$PATH:$HOME/.rvm/bin"
+    echo "here?"
 elif [ -d ~/.gem/ruby/2.5.0/bin/ ]; then
     export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin"
+else
+    # If RVM is not used, prioritize brew version of ruby
+    if [ -d /usr/local/opt/ruby/bin/ ]; then
+        export PATH="/usr/local/opt/ruby/bin:$PATH"
+        export LDFLAGS="-L/usr/local/opt/ruby/lib"
+        export CPPFLAGS="-I/usr/local/opt/ruby/include"
+    fi
 fi
 
 # export PATH=/Users/viktorstrate/.local/bin/luna-studio:$PATH

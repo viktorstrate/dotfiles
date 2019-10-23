@@ -65,9 +65,13 @@ Plug 'airblade/vim-gitgutter'
 if (executable('ack'))
     Plug 'mileszs/ack.vim'
 endif
-Plug 'wincent/command-t', {
-\   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
-\ }
+
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+
+" Plug 'wincent/command-t', {
+" \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
+" \ }
 
 " Ale {{{1
 Plug 'w0rp/ale'

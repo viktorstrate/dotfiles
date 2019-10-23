@@ -1,10 +1,11 @@
 ack
 node
-cmake
-python
+yarn
 python3
 ruby
 stow
 tmux
 trash
-yarn
+autojump
+neovim
+bat
