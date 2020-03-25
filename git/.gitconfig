@@ -1,13 +1,14 @@
 [user]
-    email = viktorstrate@gmail.com
-    name = viktorstrate
+	email = viktorstrate@gmail.com
+	name = viktorstrate
     signingkey = 3F855605109C1E8A
 [core]
     autocrlf = input
     editor = nvim
-    excludesfile = ~/.global-gitignore
+	excludesfile = /Users/viktorstrate/.global-gitignore
 [commit]
     gpgsign = false
+	template = /Users/viktorstrate/.stCommitMsg
 [web]
     browser = firefox
 [color]
@@ -39,3 +40,9 @@
     s = status
     l = log --graph --decorate
     remember = config --global credential.helper cache
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/viktorstrate/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

@@ -50,7 +50,14 @@ if [[ `uname` == 'Darwin' ]]; then
     alias paste=pbpaste
     alias o='open .'
     export NNN_COPY="$HOME/.nnn_copy.sh"
+
+    if type "/usr/local/opt/nano/bin/nano" > /dev/null; then
+        export NANO_PREFIX="/usr/local/opt/nano/bin/"
+    fi
 fi
+
+# Nano
+alias nano="$(echo $NANO_PREFIX)nano --mouse"
 
 # Auto Jump
 [ -f $(brew --prefix)/etc/profile.d/autojump.sh ] && . $(brew --prefix)/etc/profile.d/autojump.sh
@@ -96,10 +103,17 @@ else
 fi
 
 # Go
-export GOPATH="${HOME}/Development/go"
+export GOPATH="${HOME}/.go"
 export PATH=${PATH}:${GOPATH}/bin
 if [[ `uname` == 'Darwin' ]]; then
 	export GOROOT="/usr/local/opt/go/libexec"
+fi
+
+# Java
+if [[ `uname` == 'Darwin' ]]; then
+    # Add homebrew version of java to PATH
+    export PATH="/usr/local/opt/openjdk/bin:$PATH"
+    export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 fi
 
 # Export paths
