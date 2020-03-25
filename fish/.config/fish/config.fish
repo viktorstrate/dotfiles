@@ -47,7 +47,7 @@ end
 set -x PATH $PATH "/usr/local/sbin" "$HOME/.local/bin"
 
 # Rustup
-set PATH $PATH "$HOME/.cargo/bin"
+set -x PATH $PATH "$HOME/.cargo/bin"
 
 # Android
 if test $os = 'Darwin'
@@ -85,5 +85,6 @@ end
 
 # iTerm integration
 if test $os = 'Darwin'
-    # source "$HOME/.config/fish/iterm2_shell_integration.fish"
+    source "$HOME/.config/fish/iterm2_shell_integration.fish"
+    set PATH $PATH "$HOME/.iterm2"
 end

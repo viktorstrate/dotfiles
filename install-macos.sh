@@ -9,7 +9,3 @@ brew install $(cat ./brew-packages.txt)
 echo "Installing rust"
 curl https://sh.rustup.rs -sSf | sh
 
-# Atom
-echo "Installing atom plugins"
-stow atom
-./atom/.atom/install-packages.sh
