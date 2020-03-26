@@ -102,6 +102,9 @@ if [[ `uname` == 'Darwin' ]]; then
 	export GOROOT="/usr/local/opt/go/libexec"
 fi
 
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # Export paths
 export PATH="${PATH}:/usr/local/sbin"
 export PATH="${PATH}:${HOME}/.local/bin"
