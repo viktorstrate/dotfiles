@@ -8,7 +8,6 @@
 	excludesfile = /Users/viktorstrate/.global-gitignore
 [commit]
     gpgsign = false
-	template = /Users/viktorstrate/.stCommitMsg
 [web]
     browser = firefox
 [color]
@@ -39,10 +38,6 @@
     m = merge
     s = status
     l = log --graph --decorate
+    log = log --graph
     remember = config --global credential.helper cache
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Users/viktorstrate/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+
