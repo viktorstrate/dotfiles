@@ -1,0 +1,15 @@
+latexmk
+latexindent
+lastpage
+sidecap
+tocloft
+wrapfig
+was
+lipsum
+minted
+fvextra
+catchfile
+xstring
+framed
+biblatex
+biber
