@@ -119,6 +119,9 @@ if [[ `uname` == 'Darwin' ]]; then
     export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 fi
 
+# Latex
+export PATH="${PATH}:/Library/TeX/texbin"
+
 # Export paths
 export PATH="${PATH}:/usr/local/sbin"
 export PATH="${PATH}:${HOME}/.local/bin"
@@ -178,7 +181,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions zsh-iterm-touchbar)
 
 source $ZSH/oh-my-zsh.sh
 
