@@ -126,6 +126,9 @@ export PATH="${PATH}:/Library/TeX/texbin"
 export PATH="${PATH}:/usr/local/sbin"
 export PATH="${PATH}:${HOME}/.local/bin"
 
+# Choose homebrew compilers over default
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
 # GnuPG
 # if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
 #     source ~/.gnupg/.gpg-agent-info
