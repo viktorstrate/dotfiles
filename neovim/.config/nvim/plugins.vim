@@ -20,37 +20,37 @@ Plug 'Xuyuanp/nerdtree-git-plugin'        " Plugin for git
 " Check with this command :echo has("python3")
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Auto completion
-" The newest version of deoplete wasn't working, so i am using release 3.0
-let g:plugs['deoplete.nvim'].commit = 'ac4e8b5'
-Plug 'ervandew/supertab'
-Plug 'Shougo/neoinclude.vim'
-if (executable('node'))
-    Plug 'carlitux/deoplete-ternjs'
-    Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
-endif
-Plug 'zchee/deoplete-clang'               " C/C++ autocomplete
-Plug 'Shougo/neco-vim'                    " Vimscript autocomplete
 
-" Python autocomplete
-if (executable('python'))
-    Plug 'zchee/deoplete-jedi'
-endif
-
-" ZSH autocomplete
-if (executable('zsh'))
-    Plug 'zchee/deoplete-zsh'
-endif
-
-" Haskell autocomplete
-if (executable('ghc'))
-    Plug 'eagletmt/neco-ghc'
-endif
-
-Plug 'racer-rust/vim-racer'
+" Plug 'ervandew/supertab'
+" Plug 'Shougo/neoinclude.vim'
+" if (executable('node'))
+"     Plug 'carlitux/deoplete-ternjs'
+"     Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+" endif
+" Plug 'zchee/deoplete-clang'               " C/C++ autocomplete
+" Plug 'Shougo/neco-vim'                    " Vimscript autocomplete
+"
+" " Python autocomplete
+" if (executable('python'))
+"     Plug 'zchee/deoplete-jedi'
+" endif
+"
+" " ZSH autocomplete
+" if (executable('zsh'))
+"     Plug 'zchee/deoplete-zsh'
+" endif
+"
+" " Haskell autocomplete
+" if (executable('ghc'))
+"     Plug 'eagletmt/neco-ghc'
+" endif
+"
+" " Rust
+" Plug 'racer-rust/vim-racer'
 
 " Snippets {{{3
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
 
 " Airline {{{1
 Plug 'bling/vim-airline'                  " Lean & mean status/tabline
@@ -66,28 +66,24 @@ if (executable('ack'))
     Plug 'mileszs/ack.vim'
 endif
 
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" Plug 'wincent/command-t', {
-" \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
-" \ }
-
 " Ale {{{1
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 
 " Neomake {{{1
 " Plug 'benekastah/neomake'                 " Async :make and linting framework
-"Plug 'benjie/neomake-local-eslint.vim'    " Prefer local repo install of eslint over global install
+" Plug 'benjie/neomake-local-eslint.vim'    " Prefer local repo install of eslint over global install
 " Plug 'jaawerth/neomake-local-eslint-first'
 
 " Javascript {{{1
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'othree/jsdoc-syntax.vim'
-Plug 'heavenshell/vim-jsdoc'
-Plug 'moll/vim-node'
-Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'heavenshell/vim-jsdoc'
+" Plug 'moll/vim-node'
+" Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 
 " C/C++ {{{1
 Plug 'vim-scripts/a.vim', { 'for': 'cpp' } " For header switching

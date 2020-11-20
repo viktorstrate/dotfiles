@@ -1,8 +1,9 @@
 " NERDTree
 let NERDTreeMinimalUI=1
 
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Open nerd tree on vim start
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 noremap <C-n> :<C-r>=g:NERDTree.IsOpen() ? 'NERDTreeClose' : 'NERDTreeCWD'<CR><CR>
 

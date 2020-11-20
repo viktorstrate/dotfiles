@@ -1,5 +1,5 @@
 " Change leader	------------------------------{{{1
-let mapleader = "\<Space>"
+let mapleader = ","
 let maplocalleader = ","
 
 " Navigation	------------------------------{{{1

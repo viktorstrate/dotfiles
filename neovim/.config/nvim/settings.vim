@@ -79,3 +79,8 @@ set breakindentopt=shift:2
 set foldmethod=marker
 set foldcolumn=1
 noremap <tab> za
+
+" Misc ----------------------------- {{{1
+
+" Disable polyglot syntax highlighting before loading plugin
+let g:polyglot_disabled = ['latex']

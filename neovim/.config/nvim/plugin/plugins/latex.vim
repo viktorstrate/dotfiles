@@ -1,6 +1,3 @@
-" Disable latex-polyglot
-let g:polyglot_disabled = ['latex']
-
 " vimtex
 let g:tex_flavor = 'latex'
 let g:vimtex_fold_enabled = 1
