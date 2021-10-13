@@ -7,7 +7,7 @@
     editor = nvim
 	excludesfile = /Users/viktorstrate/.global-gitignore
 [commit]
-    gpgsign = false
+    gpgsign = true
 [web]
     browser = firefox
 [color]
@@ -41,3 +41,5 @@
     log = log --graph
     remember = config --global credential.helper cache
 
+[init]
+	defaultBranch = master

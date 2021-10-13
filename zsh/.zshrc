@@ -48,6 +48,9 @@ zinit wait lucid for \
 # zplugin ice wait lucid atinit"zicompinit; zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'"
 # zplugin light zdharma/null
 
+# ZSH Options
+setopt HIST_IGNORE_DUPS # ignore history duplicates
+
 ## Mac specific
 if [[ `uname` == 'Darwin' ]]; then
 
@@ -60,7 +63,7 @@ if [[ `uname` == 'Darwin' ]]; then
 
     # Mac aliases
     alias copy=pbcopy
-    alias paste=pbpaste
+    #alias paste=pbpaste
     alias o='open .'
 
     # Homebrew specific
@@ -74,7 +77,7 @@ if [[ `uname` == 'Darwin' ]]; then
     export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
     # Choose homebrew compilers over default
-    export PATH="/usr/local/opt/llvm/bin:$PATH"
+    # export PATH="/usr/local/opt/llvm/bin:$PATH"
 
     export ANDROID_HOME="$HOME/Library/Android/sdk"     # Android
     export PATH=${PATH}:${HOME}/Library/Flutter/bin     # Flutter
@@ -123,6 +126,10 @@ alias la='ls -A'
 # Directory specific aliases
 alias dev='cd ~/Development/'
 alias desk='cd ~/Desktop/'
+alias sdu='cd ~/Nextcloud/SDU/'
+
+# Show color match for grep
+export GREP_OPTIONS='--color=always'
 
 # If neovim is installed
 if type "nvim" > /dev/null; then
@@ -168,4 +175,7 @@ export PATH="${PATH}:${HOME}/.local/bin"
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# iTerm2 integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
