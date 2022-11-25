@@ -3,7 +3,6 @@ if type "starship" > /dev/null; then
    eval "$(starship init zsh)"
 fi
 
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
@@ -36,17 +35,19 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 zinit ice lucid wait from"gh-r" as"program"
-zinit light junegunn/fzf
+zinit pack"default+keys" for fzf
 
 zinit wait lucid for \
- blockf \
-    zsh-users/zsh-completions \
- atload"!_zsh_autosuggest_start" \
-    zsh-users/zsh-autosuggestions
+  atinit"zicompinit; zicdreplay" \
+      zdharma-continuum/fast-syntax-highlighting \
+  atload"_zsh_autosuggest_start" \
+      zsh-users/zsh-autosuggestions \
+  blockf atpull'zinit creinstall -q .' \
+      zsh-users/zsh-completions
 
 # Enable case insensitive completions
-# zplugin ice wait lucid atinit"zicompinit; zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'"
-# zplugin light zdharma/null
+zplugin ice wait lucid atinit"zicompinit; zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'"
+zplugin light zdharma/null
 
 # ZSH Options
 setopt HIST_IGNORE_DUPS # ignore history duplicates
@@ -74,7 +75,6 @@ if [[ `uname` == 'Darwin' ]]; then
 
     # Add homebrew version of java to PATH
     export PATH="/usr/local/opt/openjdk/bin:$PATH"
-    export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
     # Choose homebrew compilers over default
     # export PATH="/usr/local/opt/llvm/bin:$PATH"
@@ -85,6 +85,16 @@ if [[ `uname` == 'Darwin' ]]; then
     export PATH=${PATH}:${HOME}/.composer/vendor/bin    # PHP Composer
     export GOROOT="/usr/local/opt/go/libexec"           # Homebrew version of GO
     export PATH="${PATH}:/Library/TeX/texbin"           # Latex
+
+    # Darktable cli
+    export PATH="${PATH}:/Applications/darktable.app/Contents/MacOS/"
+
+    export PATH="${PATH}:/Applications/MiniZincIDE.app/Contents/Resources/bin/"
+
+    {
+        # iTerm2 integration
+        test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+    } &!
 
 
 ## Linux specific
@@ -113,10 +123,13 @@ fi
 # Aliases
 alias ..='cd ..'
 alias e='exit'
-alias speedtest='speedtest-cli'
 
 if type "ack" > /dev/null; then
     alias gack='git ls-files -oc --exclude-standard | ack -x'
+fi
+
+if type "hub" > /dev/null; then
+    alias git=hub
 fi
 
 alias l='ls -a'
@@ -141,17 +154,6 @@ else
     alias v='vim'
 fi
 
-if type "hub" > /dev/null; then
-    alias git=hub
-fi
-
-if type "nodejs" > /dev/null; then
-    alias node=nodejs
-fi
-
-# Nano
-alias nano="$(echo $NANO_PREFIX)nano --mouse"
-
 # Light theme for bat command
 export BAT_THEME="ansi-light"
 
@@ -169,6 +171,13 @@ export PATH=${PATH}:${GOPATH}/bin
 # Rust
 export PATH="${PATH}:${HOME}/.cargo/bin"
 
+# Ruby
+if [ -d "/usr/local/opt/ruby/bin" ]; then
+  export PATH="/usr/local/opt/ruby/bin:$PATH"
+  export PATH="$PATH:/usr/local/lib/ruby/gems/3.1.0/bin"
+  export PATH="$PATH:/Users/viktorstrate/.local/share/gem/ruby/3.1.0/bin"
+fi
+
 # Export paths
 export PATH="${PATH}:/usr/local/sbin"
 export PATH="${PATH}:${HOME}/.local/bin"
@@ -176,6 +185,6 @@ export PATH="${PATH}:${HOME}/.local/bin"
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# iTerm2 integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh &!
 
+[ -f "/Users/viktorstrate/.ghcup/env" ] && source "/Users/viktorstrate/.ghcup/env" &! # ghcup-env

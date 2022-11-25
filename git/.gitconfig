@@ -1,13 +1,13 @@
 [user]
 	email = viktorstrate@gmail.com
 	name = viktorstrate
-    signingkey = 3F855605109C1E8A
+	signingkey = C78D0C372892A5988FEE4C403F855605109C1E8A
 [core]
     autocrlf = input
     editor = nvim
 	excludesfile = /Users/viktorstrate/.global-gitignore
 [commit]
-    gpgsign = true
+	gpgsign = true
 [web]
     browser = firefox
 [color]
@@ -43,3 +43,18 @@
 
 [init]
 	defaultBranch = master
+[gpg]
+	program = /usr/local/bin/gpg
+[diff]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[merge]
+	tool = Kaleidoscope
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false
